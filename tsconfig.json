@@ -3,6 +3,9 @@
     "rootDir": "./",
     "baseUrl": "./",
     "target": "es5",
+    "paths": {
+      "@/components/*": ["components/*"]
+    },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,

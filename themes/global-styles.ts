@@ -1,0 +1,18 @@
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    * {
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+`;
+
+export default GlobalStyle;
