@@ -12,7 +12,7 @@ import {
 } from 'styled-system';
 import { BoxProps } from '..';
 import Flex from '../flex';
-import { IconProps } from '../icons';
+import { IconStyleProps } from '../icons';
 import { focusOutline } from '../shared-styles';
 import Spinner from '../spinner';
 
@@ -30,8 +30,8 @@ export type ButtonVariants =
 export type ButtonSizeVariant = 'large' | 'small';
 export type StyledButtonProps = BoxProps & {
   sizeVariant?: ButtonSizeVariant;
-  leftIcon?: (props: IconProps) => JSX.Element;
-  rightIcon?: (props: IconProps) => JSX.Element;
+  leftIcon?: (props: IconStyleProps) => JSX.Element;
+  rightIcon?: (props: IconStyleProps) => JSX.Element;
   isLoading?: boolean;
   variant?: ButtonVariants;
 };
@@ -218,9 +218,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     {
       leftIcon: LeftIcon,
       rightIcon: RightIcon,
-      isLoading,
-      disabled,
-      sizeVariant,
+      isLoading = false,
+      disabled = false,
+      sizeVariant = 'small',
+      variant = 'primary',
       children,
       ...props
     },
@@ -231,6 +232,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       isLoading={isLoading}
       disabled={disabled}
       sizeVariant={sizeVariant}
+      variant={variant}
       {...props}
     >
       {isLoading && (
@@ -251,9 +253,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         alignItems='center'
         opacity={isLoading ? 0 : 1}
       >
-        {LeftIcon && <LeftIcon fontSize='24px' aria-hidden mr={2} />}
+        {LeftIcon && <LeftIcon size='24px' aria-hidden mr={2} />}
         {children}
-        {RightIcon && <RightIcon fontSize='24px' aria-hidden ml={2} />}
+        {RightIcon && <RightIcon size='24px' aria-hidden ml={2} />}
       </Flex>
     </StyledButton>
   ),

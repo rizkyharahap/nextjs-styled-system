@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import { Description, Props, Title } from '@storybook/addon-docs';
+
 import Button, { ButtonProps } from './button';
 import Box from '../box';
 import Flex from '../flex';
@@ -8,26 +8,22 @@ import Icon from '../icons';
 export default {
   title: 'Components/Button',
   component: Button,
-  parameters: {
-    docs: {
-      page: () => (
-        <>
-          <Title />
-          <Description />
-          <Props of={Button} />
-        </>
-      ),
+  argTypes: {
+    children: {
+      table: {
+        action: { summary: 'Button Clicked' },
+        type: { summary: 'Write children' },
+        defaultValue: { summary: 'text | JSX.Element' },
+      },
     },
   },
 } as Meta;
 
-export const Basic: Story<ButtonProps> = (args: any) => <Button {...args} />;
-Basic.args = {
-  children: 'Label',
-  disabled: false,
-  variant: 'outline-primary',
-  sizeVariant: 'large',
-  leftIcon: Icon.Loader,
+const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+
+export const Default = Template.bind({});
+Default.args = {
+  children: 'Button Clicked',
 };
 
 export const Variants = (): JSX.Element => (

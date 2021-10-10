@@ -34,10 +34,3 @@ export const typographyConfig = compose(
   position,
   typography,
 );
-
-export type IconConfigProps = SpaceProps &
-  ColorProps &
-  LayoutProps &
-  TypographyProps;
-
-export const iconConfig = compose(space, color, layout, typography);

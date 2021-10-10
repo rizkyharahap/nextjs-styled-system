@@ -10,29 +10,29 @@ const SVGComponent = forwardRef<SVGSVGElement, IconProps>(
     return (
       <svg
         xmlns='http://www.w3.org/2000/svg'
+        width='1em'
+        height='1em'
         viewBox='0 0 24 24'
-        fill='none'
-        stroke='currentColor'
-        strokeWidth={2}
-        strokeLinecap='round'
-        strokeLinejoin='round'
+        fill='currentColor'
         ref={svgRef}
         aria-labelledby={titleId}
         {...props}
       >
         {title ? <title id={titleId}>{title}</title> : null}
-        <path d='M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83' />
+
+        <path d='M0 0h24v24H0V0z' fill='none' />
+        <path d='M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z' />
       </svg>
     );
   },
 );
 
-const Loader = styled(SVGComponent)<IconStyleProps>`
+const MoreVert = styled(SVGComponent)<IconStyleProps>`
   ${IconCSS}
 `;
 
-export default Loader;
+export default MoreVert;
 
-Loader.defaultProps = {
+MoreVert.defaultProps = {
   size: 24,
 };

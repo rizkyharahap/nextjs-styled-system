@@ -1,0 +1,5 @@
+__mocks__
+husky
+node_modules
+out
+.next

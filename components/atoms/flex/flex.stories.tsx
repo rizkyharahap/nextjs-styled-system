@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import { Description, Props, Title } from '@storybook/addon-docs';
+
 import Flex, { FlexProps } from '.';
 import Box from '../box';
 import Text from '../text';
@@ -7,19 +7,6 @@ import Text from '../text';
 export default {
   title: 'Components/Flex',
   component: Flex,
-  parameters: {
-    docs: {
-      page: () => (
-        <>
-          <Title />
-          <Description>
-            Flex component helps you create flexbox layouts.
-          </Description>
-          <Props of={Flex} />
-        </>
-      ),
-    },
-  },
 } as Meta;
 
 export const Normal: Story<FlexProps> = (args: any) => (

@@ -1,6 +1,6 @@
 let lastId = 0;
 
-export function uuid(): string {
+export function uuid(id: string): string {
   lastId++;
-  return `icon-${lastId}`;
+  return `icon-${id}-${lastId}`;
 }

@@ -1,13 +1,11 @@
 import styled, { keyframes } from 'styled-components';
-import { BoxProps } from '..';
-import Box from '../box';
-import Icon, { IconProps } from '../icons';
+import Box, { BoxProps } from '../box';
+import Icon from '../icons';
 
-export type SpinnerProps = BoxProps & {
-  block: boolean;
-  fontSize?: number | string;
+export interface SpinnerProps extends BoxProps {
   title: string;
-};
+  color?: string;
+}
 
 const spin = keyframes`
     from {
@@ -19,25 +17,23 @@ const spin = keyframes`
     }
 `;
 
-const AnimationLoader = styled(Icon.Loader)<IconProps>`
+const AnimationLoader = styled(Icon.Loader)`
   animation: ${spin} 3s linear infinite;
 `;
 
 const Spinner = ({
-  block,
   title,
   size,
   color,
   ...props
 }: SpinnerProps): JSX.Element => (
-  <Box display={block ? 'block' : 'inline-block'} {...props}>
-    <AnimationLoader title={title} fontSize={size} color={color} />
+  <Box color={color} {...props}>
+    <AnimationLoader title={title} size={size} />
   </Box>
 );
 
 export default Spinner;
 
 Spinner.defaultProps = {
-  block: true,
   title: 'Loading...',
 };

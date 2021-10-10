@@ -1,26 +1,11 @@
 import { Meta, Story } from '@storybook/react';
 import Text from './text';
-import { Title, Description, Props } from '@storybook/addon-docs';
 import { TextProps } from '.';
 import Box from '../box';
 
 export default {
   title: 'Components/Text',
   component: Text,
-  parameters: {
-    docs: {
-      page: () => (
-        <>
-          <Title />
-          <Description>
-            Primitive typographic component, defaults to `p`. Use the `as` prop
-            to set the correct HTML element independent from styling.
-          </Description>
-          <Props of={Text} />
-        </>
-      ),
-    },
-  },
 } as Meta;
 
 const Template: Story<TextProps & { children: string }> = (args: any) => (

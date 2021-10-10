@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import { Description, Props, Title } from '@storybook/addon-docs';
+
 import Heading, { HeadingProps } from '.';
 import Text from '../text';
 import Box from '../box';
@@ -8,20 +8,6 @@ import Flex from '../flex';
 export default {
   title: 'Components/Heading',
   component: Heading,
-  parameters: {
-    docs: {
-      page: () => (
-        <>
-          <Title />
-          <Description>
-            Primitive heading component, defaults to `h1`. Use the `as` prop to
-            set the correct HTML element independent from styling.
-          </Description>
-          <Props of={Heading} />
-        </>
-      ),
-    },
-  },
 } as Meta;
 
 const Basic: Story<HeadingProps & { children?: string }> = (args: any) => (

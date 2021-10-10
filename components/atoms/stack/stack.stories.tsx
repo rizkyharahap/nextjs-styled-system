@@ -1,26 +1,11 @@
 import { Meta } from '@storybook/react';
-import { Description, Props, Title } from '@storybook/addon-docs';
+
 import Stack from '.';
 import Box from '../box';
 
 export default {
   title: 'Components/Stack',
   component: Stack,
-  parameters: {
-    docs: {
-      page: () => (
-        <>
-          <Title />
-          <Description>
-            An extension of the `Flex` component, that controls spacing between
-            its children. For more context, see [Margin considered
-            harmful](https://mxstbr.com/thoughts/margin)
-          </Description>
-          <Props of={Stack} />
-        </>
-      ),
-    },
-  },
 } as Meta;
 
 export const Horizontal = (): JSX.Element => (

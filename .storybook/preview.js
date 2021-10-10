@@ -11,9 +11,6 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  options: {
-    showRoots: true,
-  },
 };
 
 export const decorators = [

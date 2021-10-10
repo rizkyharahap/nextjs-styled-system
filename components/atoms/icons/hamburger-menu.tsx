@@ -10,29 +10,28 @@ const SVGComponent = forwardRef<SVGSVGElement, IconProps>(
     return (
       <svg
         xmlns='http://www.w3.org/2000/svg'
+        width='1em'
+        height='1em'
         viewBox='0 0 24 24'
-        fill='none'
-        stroke='currentColor'
-        strokeWidth={2}
-        strokeLinecap='round'
-        strokeLinejoin='round'
+        fill='currentColor'
         ref={svgRef}
         aria-labelledby={titleId}
         {...props}
       >
         {title ? <title id={titleId}>{title}</title> : null}
-        <path d='M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83' />
+        <path d='M0 0h24v24H0V0z' fill='none' />
+        <path d='M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z' />
       </svg>
     );
   },
 );
 
-const Loader = styled(SVGComponent)<IconStyleProps>`
+const HamburgerMenu = styled(SVGComponent)<IconStyleProps>`
   ${IconCSS}
 `;
 
-export default Loader;
+export default HamburgerMenu;
 
-Loader.defaultProps = {
+HamburgerMenu.defaultProps = {
   size: 24,
 };
